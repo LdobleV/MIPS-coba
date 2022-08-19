@@ -7,7 +7,7 @@ B: .space 80
 
 
 Ejercicio 3:
-.data 0x0001000
+.data 0x1001000
 
 palabra_space: .space 4
 byte_space: .space 1
