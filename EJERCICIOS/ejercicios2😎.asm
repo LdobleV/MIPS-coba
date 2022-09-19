@@ -1,5 +1,73 @@
-
 Ejercicio 1-
+
+.data
+V: .byte 0, 1, 1, 1, 0
+res: .space 3
+.text
+
+lb $s0, V
+lb $s1, V+1
+lb $s2, V+2
+lb $s3, V+3
+lb $s4, V+4
+
+and $t0, $s0, $s4
+
+sb $t0, res
+
+or $t1, $s1, $s3
+
+sb $t1, res+1
+
+and $t0, $s1, $s2
+or $t1, $t0, $s0
+
+sb $t1, res+2
+
+Ejercicio 2-
+
+.data
+V: .word 2, -4, -6
+res: .space 12
+.text
+
+lw $s0, V
+lw $s1, V+4
+lw $s2, V+8
+
+sge $t0, $s0, $0
+sge $t1, $s1, $0
+sge $t2, $s2, $0
+
+sw $t0, res
+sw $t1, res+4
+sw $t2, res+8
+
+Ejercicio 3-
+
+.data
+V: .word 1, -4, -5, 2
+res: .space 1
+.text
+
+lw $s0, V
+lw $s1, V+4
+lw $s2, V+8
+lw $s3, V+12
+
+sge $t0, $s0, $0
+sge $t1, $s1, $0
+sge $t2, $s2, $0
+sge $t3, $s3, $0
+
+and $s4, $t0, $t1
+and $s5, $t2, $t3
+and $t4, $s4, $s5
+
+sw $t4, res($0)
+
+
+Ejercicio 4-
 
 .data
 
@@ -39,7 +107,7 @@ finend:
 sw $t5, res($0) #Guardamos el resultado en rs ($t5)
 
 
-Ejercicio 2-
+Ejercicio 5-
 
 .data
 
@@ -78,7 +146,7 @@ finbucle:
 
 sw $t5, total($0)
 
-Ejercicio 3-
+Ejercicio 6-
 
 
 .data
@@ -121,7 +189,7 @@ j resto
 
 finbucle:
 
-Ejercicio 4-
+Ejercicio 7-
 
 .data
 
